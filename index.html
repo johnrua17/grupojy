@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Empresarial JYY - Innovación y Excelencia</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3a0ca3;
+            --secondary-color: #4cc9f0;
+            --accent-color: #f72585;
+            --text-color: #2b2d42;
+            --light-bg: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header:hover {
+            background-color: #fff;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Hero Section */
+        #inicio {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 150px 0 100px;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        
+        #inicio h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        #inicio p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            background-color: #e5097f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        
+        /* Secciones */
+        section {
+            padding: 80px 0;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+        
+        /* Evento Section */
+        .event-details {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-top: 40px;
+            transition: all 0.3s ease;
+        }
+        
+        .event-details:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .event-details img {
+            width: 60%; /* Empequeñece la imagen del logo */
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .event-details h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .event-details ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .event-details li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .event-details i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Equipo Section */
+        #equipo {
+            background-color: var(--light-bg);
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .team-member img {
+            width: 200px; /* Aumenta el tamaño de las imágenes de los participantes */
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 5px solid var(--secondary-color);
+        }
+        
+        .team-member h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .team-member p {
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+        
+        /* Contacto Section */
+        #contacto {
+            background-color: white;
+        }
+        
+        .contact-info {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .contact-form button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        
+        .contact-form button:hover {
+            background-color: #e5097f;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0 30px;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+        
+        footer h4 {
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+        
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        footer ul li {
+            margin-bottom: 10px;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .social-icons {
+            font-size: 1.5rem;
+        }
+        
+        .social-icons a {
+            margin-right: 15px;
+            color: white;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            
+            nav a {
+                margin: 10px 0;
+            }
+            
+            #inicio h1 {
+                font-size: 2.5rem;
+            }
+            
+            .event-details, .team-member {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Grupo Empresarial J&Y</a>
+            <div>
+                <a href="#inicio">Inicio</a>
+                <a href="#evento">Evento</a>
+                <a href="#equipo">Equipo</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <div class="container">
+                <h1>Innovación y Excelencia Empresarial</h1>
+                <p>Descubre el futuro del emprendimiento con Grupo Empresarial J&Y</p>
+                <a href="#evento" class="btn">Conoce Nuestro Próximo Evento</a>
+            </div>
+        </section>
+
+        <section id="evento">
+            <div class="container">
+                <h2>Reunión Informativa</h2>
+                <div class="event-details">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- <img src="./logo.png" alt="Evento JYY"> Logo más pequeño -->
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Detalles del Evento</h3>
+                            <ul>
+                                <li><i class="fas fa-calendar-alt"></i> 26 de septiembre del 2024</li>
+                                <li><i class="fas fa-clock"></i> 4:30 PM - 5:30 PM</li>
+                                <li><i class="fas fa-map-marker-alt"></i> Salón Casa de la mujer, Barbacoas</li>
+                            </ul>
+                            <p>Únete a nosotros para una sesión informativa sobre las últimas tendencias en emprendimiento y gestión empresarial.</p>
+                            <!-- <p><strong>Beneficios:</strong> Conocimiento exclusivo de expertos, networking con otros emprendedores, y oportunidades de inversión.</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="equipo">
+            <div class="container">
+                <h2>Nuestro Equipo</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="team-member">
+                            <img src="./sebastianimagen.jpg" alt="Sebastian Montenegro">
+                            <h3>Sebastian Montenegro</h3>
+                            <p><strong>Abogado</strong></p>
+                            <p>Experto en derecho empresarial y corporativo.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="team-member">
+                            <img src="./yuliethimagen.jpg" alt="Yulieth Rua">
+                            <h3>Yulieth Rua</h3>
+                            <p><strong>Administradora de Empresas</strong></p>
+                            <p>Especialista en estrategia y gestión empresarial.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <div class="container">
+                <h2>Contáctanos</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="contact-info">
+                            <h3>Información de Contacto</h3>
+                            <ul>
+                                <li><i class="fas fa-envelope"></i> grupoempresarialjyy26@gmail.com</li>
+                                <!-- <li><i class="fas fa-globe"></i> www.grupoempresarialjyy.com</li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-6">
+                        <form class="contact-form">
+                            <input type="text" placeholder="Nombre" required>
+                            <input type="email" placeholder="Correo electrónico" required>
+                            <textarea placeholder="Mensaje" rows="4" required></textarea>
+                            <button type="submit">Enviar Mensaje</button>
+                        </form>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Grupo Empresarial J&Y</h4>
+                    <p>Innovación y excelencia en cada paso.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <!-- <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a> -->
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:grupoempresarialjyy26@gmail.com">Enviar un correo</a></li>
+                        <!-- <li><a href="www.grupoempresarialjyy.com">Visitar sitio web</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
