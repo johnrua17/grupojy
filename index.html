@@ -6,6 +6,73 @@
     <title>Grupo Empresarial y Jurídico J&Y </title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
+        /* ... (estilos previos sin cambios) ... */
+
+        /* Estilos para el formulario de asistencia */
+        #asistencia {
+            background-color: var(--light-bg);
+            padding: 80px 0;
+        }
+
+        .attendance-form {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .attendance-form input,
+        .attendance-form select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .attendance-form button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .attendance-form button:hover {
+            background-color: #e5097f;
+            transform: translateY(-2px);
+        }
+
+        /* Estilos para el botón de WhatsApp */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+    <style>
         :root {
             --primary-color: #3a0ca3;
             --secondary-color: #4cc9f0;
@@ -373,6 +440,7 @@
                 <a href="#inicio">Inicio</a>
                 <a href="#evento">Evento</a>
                 <a href="#equipo">Equipo</a>
+                <a href="#asistencia">Asistencia</a>
                 <a href="#contacto">Contacto</a>
             </div>
         </nav>
@@ -432,6 +500,25 @@
                 </div>
             </div>
         </section>
+        <section id="asistencia">
+            <div class="container">
+                <h2>Confirma tu Asistencia</h2>
+                <div class="attendance-form">
+                    <form action="https://docs.google.com/forms/d/e/1FAIpQLScIfzEw8X8iDkbZ5D3ICulXjApwKi-tbjGcIE9H7m5gNan1Bg/formResponse" method="POST" target="_blank">
+                        <input type="text" name="entry.2005620554" placeholder="Nombre completo" required>
+                        <input type="text" name="entry.1045781291" placeholder="Nombre del comercio" required>
+                        <input type="tel" name="entry.1166974658" placeholder="Número de celular" required>
+                        <select name="entry.839337160" required>
+                            <option value="">¿Asistirás?</option>
+                            <option value="Si">Sí</option>
+                            <option value="No">No</option>
+                        </select>
+                        <button type="submit">Confirmar Asistencia</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
 
         <section id="contacto">
             <div class="container">
@@ -469,5 +556,9 @@
             </div>
         </div>
     </footer>
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/573145508943" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </body>
 </html>
